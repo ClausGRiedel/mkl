@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head>
+
+<title>Farbleitsystem Test</title>
+<meta name="description" content="Farbleitsystem des Langwasserbades N�rnberg">
+<meta name="keywords" content="Farbleitsystem, zeitabh&auml;ngig, tageszeit, Bahnbelegung, document.write, time, JavaScript">
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<meta name="language" content="de">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<!--  Refresh wichtig f�r die Neuladung der Seite vom Server nach "content"-Sekunden --> 
+<meta http-equiv="refresh" content="30">
+
+<meta name="publisher" content="Claus G. Riedel">
+<meta name="page-topic" content="R-IQ 2015">
+
+<style type="text/css" language="CSS">
+	Body {
+		color: red;
+		text-align: center;
+		background-image: url("fls/LaWaBa-Rahmen-quer.JPG");
+		background-repeat: no-repeat;
+	} 
+	#BahnbelegungText {
+		margin-top : 150px;
+		margin-left: 75px;
+		width: 1050px;
+		height: 550px;
+		background-color: grey;
+	}
+</style>
+
+<script type="text/javascript" language="JavaScript"> 
+var wochentag = new
+Array("Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag");
+
+var monatname = new
+Array("Januar","Februar","M�rz","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember");
+
+
+function BahnbelegungAnzeigen() {
+
+var uhrzeit = new Date()
+var monat = monatname[uhrzeit.getMonth()];
+var datumtag = uhrzeit.getDate();
+var Stunde = uhrzeit.getHours();
+var Minuten = uhrzeit.getMinutes();
+var Sekunden = uhrzeit.getSeconds();
+if (Minuten < "10") Minuten = "0" + Minuten;
+if (Sekunden < "10") Sekunden = "0" + Sekunden;
+var Tag = uhrzeit.getDay();
+var Zeit = wochentag[Tag] + " " + Stunde + ":" + Minuten + ":" + Sekunden +" Uhr &nbsp; ";
+
+// Anfang Textbausteine 
+
+// Bahnbelegung
+// Daten per JSON laden
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+if (this.readyState == 4 && this.status == 200) {
+	var TageObj = JSON.parse(this.responseText);
+	console.log(this.responseText);
+	TageObj = TageObj.tage;
+	console.log(TageObj);
+	}
+};
+xmlhttp.open("GET", "fls/bahnbelegung.json", true);
+xmlhttp.send();
+		
+//Montag
+var TextModulMo01 = "<img src='../fls/Mo08r.jpg' alt='bild'>";
+var TextModulMo02 = "<img src='../fls/Mo0945r.jpg' alt='bild'>";
+var TextModulMo03 = "<img src='../fls/Mo1130r.jpg' alt='bild'>";
+var TextModulMo04 = "<img src='../fls/Mo1315r.jpg' alt='bild'>";
+var TextModulMo05 = "<img src='../fls/Mo15r.jpg' alt='bild'>";
+//Dienstag
+var TextModulDi01 = "<img src='../fls/Di08r.jpg' alt='bild'>";
+var TextModulDi02 = "<img src='../fls/Di0945r.jpg' alt='bild'>";
+var TextModulDi03 = "<img src='../fls/Di1130r.jpg' alt='bild'>";
+var TextModulDi04 = "<img src='../fls/Di1315r.jpg' alt='bild'>";
+var TextModulDi05 = "<img src='../fls/Di15r.jpg' alt='bild'>";
+//Mittwoch
+var TextModulMi01 = "<img src='../fls/Mi08r.jpg' alt='bild'>";
+var TextModulMi02 = "<img src='../fls/Mi0945r.jpg' alt='bild'>";
+var TextModulMi03 = "<img src='../fls/Mi1130r.jpg' alt='bild'>";
+var TextModulMi04 = "<img src='../fls/Mi1315r.jpg' alt='bild'>";
+var TextModulMi05 = "<img src='../fls/Mi15r.jpg' alt='bild'>";
+//Donnerstag
+var TextModulDo01 = "<img src='../fls/Do08r.jpg' alt='bild'>";
+var TextModulDo02 = "<img src='../fls/Do0945r.jpg' alt='bild'>";
+var TextModulDo03 = "<img src='../fls/Do1130r.jpg' alt='bild'>";
+var TextModulDo04 = "<img src='../fls/Do1315r.jpg' alt='bild'>";
+var TextModulDo05 = "<img src='../fls/Do15r.jpg' alt='bild'>";
+//Freitag
+var TextModulFr01 = "<img src='../fls/Fr08r.jpg' alt='bild'>";
+var TextModulFr02 = "<img src='../fls/Fr0945r.jpg' alt='bild'>";
+var TextModulFr03 = "<img src='../fls/Fr1130r.jpg' alt='bild'>";
+var TextModulFr04 = "<img src='../fls/Fr1345r.jpg' alt='bild'>";
+var TextModulFr05 = "<img src='../fls/Fr15r.jpg' alt='bild'>";
+
+// Randzeiten
+var TextModul01 = "Abendbetrieb: <b>Schulbetrieb zu Ende<\/b><br>Morgen ab 6:00 geht�s weiter";
+var TextModul02 = "Nachtbetrieb: <b>M�rchenstunde<\/b><br>Ab 6:00 geht�s weiter";
+var TextModul03 = "Wochenende: <b>Schwimmbetrieb<\/b><br>50 m - Bahn";
+var TextModul04 = "Wochenende: <b>Schwimmbetrieb<\/b><br>50 m - Bahn";
+
+// Ende Textbausteine
+
+
+// Bl�cke Unterscheidung der Wochentage
+
+// Tag 1 Montag ::::::::::::::::::::::::::::::::::::::::::::::::::
+if (Tag == "1")
+{
+// Unterscheidung der Uhrzeiten
+if (Stunde >= "0" && Stunde < "6") ZeitText = TextModul02;   // Nacht
+if (Stunde >= "6" && Stunde < "9") ZeitText = TextModulMo01;   // 07:00-09:30
+if (Stunde >= "9" && Stunde < "11") ZeitText = TextModulMo02;   // 09:45-11:15
+if (Stunde >= "11" && Stunde < "13") ZeitText = TextModulMo03; //11:30-13:00
+if (Stunde >= "13" && Stunde < "14") ZeitText = TextModulMo04; //13:15-14:45
+if (Stunde >= "14" && Stunde < "16") ZeitText = TextModulMo05; //15:00-16:30
+if (Stunde >= "16" && Stunde < "22") ZeitText = TextModul01; //Abend
+if (Stunde >= "22" && Stunde < "24") ZeitText = TextModul02; //Nacht
+}
+
+
+// Tag 2 Dienstag ::::::::::::::::::::::::::::::::::::::::::::::::::
+if (Tag == "2")
+{
+// Unterscheidung der Uhrzeiten
+if (Stunde >= "0" && Stunde < "6") ZeitText = TextModul02;   // Nacht
+if (Stunde >= "6" && Stunde < "9") ZeitText = TextModulDi01;   // 07:00-09:30
+if (Stunde >= "9" && Stunde < "11") ZeitText = TextModulDi02;   // 09:45-11:15
+if (Stunde >= "11" && Stunde < "13") ZeitText = TextModulDi03; //11:30-13:00
+if (Stunde >= "13" && Stunde < "14") ZeitText = TextModulDi04; //13:15-14:45
+if (Stunde >= "14" && Stunde < "16") ZeitText = TextModulDi05; //15:00-16:30
+if (Stunde >= "16" && Stunde < "22") ZeitText = TextModul01; //Abend
+if (Stunde >= "22" && Stunde < "24") ZeitText = TextModul02; //Nacht
+}
+
+
+// Tag 3 Mittwoch ::::::::::::::::::::::::::::::::::::::::::::::::::
+if (Tag == "3")
+{
+// Unterscheidung der Uhrzeiten
+if (Stunde >= "0" && Stunde < "6") ZeitText = TextModul02;   // Nacht
+if (Stunde >= "6" && Stunde < "9") ZeitText = TextModulMi01;   // 07:00-09:30
+if (Stunde >= "9" && Stunde < "11") ZeitText = TextModulMi02;   // 09:45-11:15
+if (Stunde >= "11" && Stunde < "13") ZeitText = TextModulMi03; //11:30-13:00
+if (Stunde >= "13" && Stunde < "14") ZeitText = TextModulMi04; //13:15-14:45
+if (Stunde >= "14" && Stunde < "16") ZeitText = TextModulMi05; //15:00-16:30
+if (Stunde >= "16" && Stunde < "22") ZeitText = TextModul01; //Abend
+if (Stunde >= "22" && Stunde < "24") ZeitText = TextModul02; //Nacht
+}
+
+
+// Tag 4 Donnerstag ::::::::::::::::::::::::::::::::::::::::::::::::::
+if (Tag == "4")
+{
+// Unterscheidung der Uhrzeiten
+if (Stunde >= "0" && Stunde < "6") ZeitText = TextModul02;   // Nacht
+if (Stunde >= "6" && Stunde < "9") ZeitText = TextModulDo01;   // 07:00-09:30
+if (Stunde >= "9" && Stunde < "11") ZeitText = TextModulDo02;   // 09:45-11:15
+if (Stunde >= "11" && Stunde < "13") ZeitText = TextModulDo03; //11:30-13:00
+if (Stunde >= "13" && Stunde < "14") ZeitText = TextModulDo04; //13:15-14:45
+if (Stunde >= "14" && Stunde < "16") ZeitText = TextModulDo05; //15:00-16:30
+if (Stunde >= "16" && Stunde < "22") ZeitText = TextModul01; //Abend
+if (Stunde >= "22" && Stunde < "24") ZeitText = TextModul02; //Nacht
+}
+
+
+// Tag 5 Freitag ::::::::::::::::::::::::::::::::::::::::::::::::::
+if (Tag == "5")
+{
+// Unterscheidung der Uhrzeiten
+if (Stunde >= "0" && Stunde < "6") ZeitText = TextModul02;   // Nacht
+if (Stunde >= "6" && Stunde < "9") ZeitText = TextModulFr01;   // 07:00-09:30
+if (Stunde >= "9" && Stunde < "11") ZeitText = TextModulFr02;   // 09:45-11:15
+if (Stunde >= "11" && Stunde < "13") ZeitText = TextModulFr03; //11:30-13:00
+if (Stunde >= "13" && Stunde < "14") ZeitText = TextModulFr04; //13:15-14:45
+if (Stunde >= "14" && Stunde < "16") ZeitText = TextModulFr05; //15:00-16:30
+if (Stunde >= "16" && Stunde < "22") ZeitText = TextModul01; //Abend
+if (Stunde >= "22" && Stunde < "24") ZeitText = TextModul02; //Nacht
+}
+
+// Tag 6 Samstag oder 0 Sonntag ::::::::::::::::::::::::::::::::::::::::::::::::::
+if (Tag == "6" || Tag == "0")
+{
+ZeitText = TextModul03;
+}
+
+//Demo...
+var Textstring1 = datumtag+". "+monat+ " : " + Zeit + "<br>" + ZeitText;
+// schreibt den Text in das Dokument
+document.getElementById("BahnbelegungText").innerHTML = Textstring1;
+
+
+} //function BahnbelegungAnzeigen() Ende
+
+// Autostart nach 1 Sek
+Timer1 = window.setTimeout("BahnbelegungAnzeigen()",100);
+
+
+</script>
+
+ </head>
+
+ <body>
+
+	<div id="BahnbelegungSeite">
+		<div id="BahnbelegungTitel">Farbleitsystem Test</div>
+		<div id="BahnbelegungText"></div>
+	</div>
+
+ </body>
+</html>

@@ -1,0 +1,148 @@
+{
+"tage":[
+	{ 	"name":"Montag",
+		"zeiten":[
+			{ 	"uhrzeit":"08:00-9:30",
+				"bahnen":[
+				{	"farbe":"rot",
+					"umkleide": "EG",
+					"belegung": {
+						"Bahn1":"pirck",
+						"Bahn2":"bb",
+						"Bemerkung_oben": "bo ",
+						"Bemerkung_unten": "bu "
+					}
+				},
+				{	"farbe":"gelb",
+					"umkleide": "OG",
+					"belegung": {
+						"Bahn1":"pirck",
+						"Bahn2":"bb",
+						"Bemerkung_oben": "bo g",
+						"Bemerkung_unten": "bu g "
+					}
+				},
+				{	"farbe":"blau",
+					"umkleide": "EG",
+					"belegung" : {
+						"Bahn1":"langwasser",
+						"Bahn2":"bb"
+					}
+				}
+				]
+			},
+			{	"uhrzeit":"09:45-11:15",
+				"bahnen":[
+				{	"farbe":"rot",
+					"belegung" : {
+						"Bahn1":"pirck",
+						"Bahn2":"bb"
+					}
+				}
+				]
+			},
+			{	"uhrzeit":"10:00-9:30",
+				"bahnen":[
+				{	"farbe":"blau",
+					"belegung" : {
+						"Bahn1":"pirck",
+						"Bahn2":"bb"
+					}
+				}
+				]
+			}
+		]
+	},
+	{	"name":"Dienstag",
+		"zeiten":[
+			{	"uhrzeit":"08:00-9:30",
+				"bahnen":[			
+				{	"farbe":"rot",
+					"umkleide": "EG",
+					"belegung": {
+						"Bahn1":"pirck",
+						"Bahn2":"bb",
+						"Bemerkung_oben": "bo ",
+						"Bemerkung_unten": "bu "
+					}
+				},
+				{	"farbe":"gelb",
+					"umkleide": "OG",
+					"belegung": {
+						"Bahn1":"pirck",
+						"Bahn2":"bb",
+						"Bemerkung_oben": "bo g",
+						"Bemerkung_unten": "bu g "
+					}
+				},
+				{	"farbe":"blau",
+					"umkleide": "EG",
+					"belegung" : {
+						"Bahn1":"langwasser",
+						"Bahn2":"bb"
+					}
+				}
+				]
+			},
+			{	"uhrzeit":"09:00-9:30",
+				"bahnen":[			
+				{	"farbe":"rot",
+					"umkleide": "EG",
+					"belegung": {
+						"Bahn1":"pirck",
+						"Bahn2":"bb",
+						"Bemerkung_oben": "bo ",
+						"Bemerkung_unten": "bu "
+					}
+				},
+				{	"farbe":"gelb",
+					"umkleide": "OG",
+					"belegung": {
+						"Bahn1":"pirck",
+						"Bahn2":"bb",
+						"Bemerkung_oben": "bo g",
+						"Bemerkung_unten": "bu g "
+					}
+				},
+				{	"farbe":"blau",
+					"umkleide": "EG",
+					"belegung" : {
+						"Bahn1":"langwasser",
+						"Bahn2":"bb"
+					}
+				}
+				]
+			},
+			{	"uhrzeit":"10:00-9:30",
+				"bahnen":[			
+				{	"farbe":"rot",
+					"umkleide": "EG",
+					"belegung": {
+						"Bahn1":"pirck",
+						"Bahn2":"bb",
+						"Bemerkung_oben": "bo ",
+						"Bemerkung_unten": "bu "
+					}
+				},
+				{	"farbe":"gelb",
+					"umkleide": "OG",
+					"belegung": {
+						"Bahn1":"pirck",
+						"Bahn2":"bb",
+						"Bemerkung_oben": "bo g",
+						"Bemerkung_unten": "bu g "
+					}
+				},
+				{	"farbe":"blau",
+					"umkleide": "EG",
+					"belegung" : {
+						"Bahn1":"langwasser",
+						"Bahn2":"bb"
+					}
+				}
+			]
+			}
+		]	
+	}
+	]
+}

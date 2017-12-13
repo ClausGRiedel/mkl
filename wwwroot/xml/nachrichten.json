@@ -1,0 +1,19 @@
+{
+	"nachrichten" : [
+	  {
+		"quelle": 'Incredible new stuff is coming up on Google.',
+		"von": 'Click here!',
+		"nachricht":  'http://google.de'
+	  },
+	  {
+	    quelle: 'Telefon',
+		von:	'Kathy Shepherd',
+		nachricht: 'Denke daran, auf dem Nachhauseweg von der Arbeit Milch zu kaufen'
+	  },
+	  {
+	    quelle: 'Pager',
+		von:	'Kristin Shepherd',
+		nachricht: 'Hausaufgaben'
+	  }
+	]
+}

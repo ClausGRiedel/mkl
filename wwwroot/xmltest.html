@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<HTML>
+<HEAD>
+	<TITLE>XML-Dateninsel</TITLE>
+</HEAD>
+
+<BODY>
+	<XML id="meineNchr" src="xml/nachrichten.xml"/>
+	<H1>Meine Nachrichten</H1>
+	<TABLE id="table" border="5" width="100%" datasrc="#meineNchr" summary="Nachrichten">
+		<THEAD style="background-color: orange">
+			<TH>Quelle</TH>
+			<TH>Von</TH>
+			<TH>Nachricht</TH>
+		</THEAD>
+		<TR valign="top" align="center">
+			<TD><SPAN datafld="quelle"/>q</TD>
+			<TD><SPAN datafld="von"/>v</TD>
+			<TD><SPAN datafld="nachricht"/>n</TD>
+		</TR>
+	</TABLE> 
+</BODY>
+</HTML>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="notiz.xsl"?>
+<notiz>
+  <nchr>
+   <quelle>Telefon</quelle>
+   <von>Kathy Shepherd</von>
+   <nachricht>Denke daran, auf dem Nachhauseweg von der Arbeit Milch zu kaufen</nachricht>
+  </nchr>
+      
+  <nchr>  
+   <quelle>E-Mail</quelle>
+   <von>Greg Shepherd</von>
+   <nachricht>Ich brauche ein wenig Hilfe bei den Hausaufgaben</nachricht>
+  </nchr>
+
+  <nchr>
+   <quelle>E-Mail</quelle>
+   <von>Kristen Shepherd</von>
+   <nachricht>Bitte spiele heute Abend Scribble mit mir </nachricht>
+  </nchr>
+
+  <nchr>
+   <quelle>Pager</quelle>
+   <von>Kathy Shepherd</von>
+   <nachricht>Kauf eine Flasche Wein, die wir heute Abend zu der Party mitbringen koennen!</nachricht>
+  </nchr>
+     
+  <nchr>
+   <quelle>Telefon</quelle>
+   <von>Kristen Shepherd</von>
+   <nachricht>Kannst du mich zu meiner Freundin bringen?</nachricht>
+  </nchr>
+     
+  <nchr>
+   <quelle>E-Mail</quelle>
+   <von>Greg Shepherd</von>
+   <nachricht>Wir treffen uns in der Bibliothek!</nachricht>
+  </nchr>
+     
+  <nchr>
+   <quelle>E-Mail</quelle>
+   <von>Kathy Shepherd</von>
+   <nachricht>Bob hat zurueckgerufen.</nachricht>
+  </nchr>
+     
+  <nchr>
+   <quelle>Pager</quelle>
+   <von>Kathy Shepherd</von>
+   <nachricht>Hol Deine Hemden aus der Reinigung!</nachricht>
+  </nchr>
+</notiz>  

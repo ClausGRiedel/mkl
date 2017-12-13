@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head >
+    <title>JSON Test</title>
+    <meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html": charset=utf-8" />
+	<meta name="audience" content="Alle" />
+	<meta http-equiv="content-language" content="de" />
+	<meta name="author" content="Claus" />
+	
+    <script type="text/javascript">
+
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		var myObj = JSON.parse(this.responseText);
+        console.log(this.responseText);
+		myObj = myObj.tage;
+		
+        console.log("Tage: " + myObj.length);
+		
+		for (var i = 0; i< myObj.length; i++ ){
+			document.write("<h1>Tag: "+ myObj[i].name +"</h1><br/>");
+			var currentObject = myObj[i];
+			currentObject = currentObject.zeiten;
+			console.log("Uhrzeiten: " +currentObject.length);
+			for (var j = 0; j< currentObject.length; j++ ){
+				document.write("<h2>Uhrzeit: "+ currentObject[j].uhrzeit +"</h2><br/>");
+				var belegungObj = currentObject[j];
+				belegungObj = belegungObj.belegungen;
+				console.log("Bahnen: " +belegungObj.length);
+				for (var k = 0; k< belegungObj.length; k++ ){
+						document.write("<h3>Farbe: " + belegungObj[k].farbe +"</h3><br/>");
+						var bahninfoObj = belegungObj[k].bahnInfos;
+						document.write("Bahn1: " + bahninfoObj.Bahn1 +"<br/>");
+						document.write("Bahn2: " + bahninfoObj.Bahn2 +"<br/>");
+						document.write("Bem o: " + bahninfoObj.Bemerkung_oben +"<br/>");
+						document.write("Bem u: " + bahninfoObj.Bemerkung_unten +"<br/>");
+					}
+				document.write("<br/>");
+				}
+			}
+   		}
+	};
+		xmlhttp.open("GET", "xml/bahnbelegung.json", true);
+		xmlhttp.send();
+			
+
+//	};
+		
+	</script>
+</head>
+<body>
+<p id="demo">nix da</p>
+</body>
+</html>

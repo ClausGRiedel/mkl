@@ -1,0 +1,108 @@
+{
+"tage":[
+	{
+		"name":"Montag",
+		"zeiten":[
+			{
+			"uhrzeit":"08:00-9:30",
+			"belegungen":[
+				{
+				"farbe":"rot",
+				"bahnInfos": {
+					"Bahn1":"pirck",
+					"Bahn2":"bb",
+					"Bemerkung_oben": "bo ",
+					"Bemerkung_unten": "bu "
+					}
+				},
+				{
+				"farbe":"gelb",
+				"bahnInfos": {
+					"Bahn1":"pirck",
+					"Bahn2":"bb",
+					"Bemerkung_oben": "bo g",
+					"Bemerkung_unten": "bu g "
+					}
+				},
+				{
+				"farbe":"blau",
+				"bahnInfos" : {
+					"Bahn1":"langwasser",
+					"Bahn2":"bb"
+					}
+				}
+				]
+			}
+			,
+			{
+			"uhrzeit":"09:45-11:15",
+			"belegungen":[
+				{
+				"farbe":"rot",
+				"bahnInfos" : {
+					"Bahn1":"pirck",
+					"Bahn2":"bb"
+					}
+				}
+				]
+			},
+			{
+			"uhrzeit":"10:00-9:30",
+			"belegungen":[
+			{
+				"farbe":"blau",
+				"bahnInfos" : {
+					"Bahn1":"pirck",
+					"Bahn2":"bb"
+					}
+			}
+			]
+		}
+		]
+	},
+	{
+		"name":"Dienstag",
+		"zeiten":[
+			{
+			"uhrzeit":"08:00-9:30",
+			"belegungen":[
+			{
+				"farbe":"rot",
+				"bahnInfos":{
+					"Bahn1":"pirck",
+					"Bahn2":"bb"
+					}
+				
+				}
+				]
+			},
+			{
+			"uhrzeit":"09:00-9:30",
+			"belegungen":[
+			{
+				"farbe":"gelb",
+				"bahnInfos":{
+					"Bahn1":"pirck",
+					"Bahn2":"bb"
+					}
+				}
+				]
+			},
+			{
+			"uhrzeit":"10:00-9:30",
+			"belegungen":[
+			{
+				"farbe":"rot",
+				"bahnInfos":{
+					"Bahn1":"pirck",
+					"Bahn2":"bb"
+					}
+				
+			}
+			]
+		}	
+		]	
+		
+	}
+	]
+}
